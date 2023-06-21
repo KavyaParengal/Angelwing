@@ -75,80 +75,80 @@ class _Single_OrphanageState extends State<Single_Orphanage> {
         .size;
     return Scaffold(
 
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-        height: 80,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-
-            GestureDetector(
-              onTap: () {
-                setState(() {
-
-                });
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => navigation()));
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-
-                  Icon(Icons.home_outlined,),
-                  /*  new Image.asset('icon/home.png',
-                    height: 35,
-                    width: 55,
-                  ),
-                 */
-                  Text('Home',)
-                ],
-              ),
-            ),
-
-            GestureDetector(
-              onTap: () {
-                setState(() {
-
-                });
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ClassNotify()));
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  // new Image.asset('icon/notification.png',
-                  //   height: 40,
-                  //   width: 60,
-                  // ),
-                  Icon(Icons.notifications_outlined,),
-                  Text('Notification',)
-                ],
-              ),
-            ),
-
-            GestureDetector(
-              onTap: () {
-                setState(() {
-
-                });
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Profile()));
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  // new Image.asset('icon/user.png',
-                  //   height: 35,
-                  //   width: 55,
-                  // ),
-                  Icon(Icons.person_outline_outlined,),
-                  Text('Profile',)
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
+      // bottomNavigationBar: Container(
+      //   padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+      //   height: 80,
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //     children: [
+      //
+      //       GestureDetector(
+      //         onTap: () {
+      //           setState(() {
+      //
+      //           });
+      //           Navigator.push(context,
+      //               MaterialPageRoute(builder: (context) => navigation()));
+      //         },
+      //         child: Column(
+      //           mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //           children: [
+      //
+      //             Icon(Icons.home_outlined,),
+      //             /*  new Image.asset('icon/home.png',
+      //               height: 35,
+      //               width: 55,
+      //             ),
+      //            */
+      //             Text('Home',)
+      //           ],
+      //         ),
+      //       ),
+      //
+      //       GestureDetector(
+      //         onTap: () {
+      //           setState(() {
+      //
+      //           });
+      //           Navigator.push(context,
+      //               MaterialPageRoute(builder: (context) => ClassNotify()));
+      //         },
+      //         child: Column(
+      //           mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //           children: [
+      //             // new Image.asset('icon/notification.png',
+      //             //   height: 40,
+      //             //   width: 60,
+      //             // ),
+      //             Icon(Icons.notifications_outlined,),
+      //             Text('Notification',)
+      //           ],
+      //         ),
+      //       ),
+      //
+      //       GestureDetector(
+      //         onTap: () {
+      //           setState(() {
+      //
+      //           });
+      //           Navigator.push(context,
+      //               MaterialPageRoute(builder: (context) => Profile()));
+      //         },
+      //         child: Column(
+      //           mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //           children: [
+      //             // new Image.asset('icon/user.png',
+      //             //   height: 35,
+      //             //   width: 55,
+      //             // ),
+      //             Icon(Icons.person_outline_outlined,),
+      //             Text('Profile',)
+      //           ],
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
 
 
       appBar: AppBar(

@@ -290,7 +290,6 @@ class _AdoptionState extends State<Adoption> {
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
-
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

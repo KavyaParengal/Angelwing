@@ -1,5 +1,9 @@
+import 'dart:convert';
+
+import 'package:demo1/api.dart';
 import 'package:demo1/login.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ForgetPassword extends StatefulWidget {
   const ForgetPassword({Key? key}) : super(key: key);
@@ -11,6 +15,39 @@ class ForgetPassword extends StatefulWidget {
 class _ForgetPasswordState extends State<ForgetPassword> {
   TextEditingController emailController=TextEditingController();
 
+  bool _isLoading=false;
+  void forgotpass()async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    var data = {
+      "emailController": emailController.text,
+    };
+    print("data${data}");
+    var res = await Api().authData(data,'/api/password-reset-request');
+    var body = json.decode(res.body);
+    print(body);
+
+    if(body['success'] == true)
+    {
+      print('body${body}');
+      // Fluttertoast.showToast(
+      //   msg: body['message'].toString(),
+      //   backgroundColor: Colors.grey,
+      // );
+
+      //Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+    }
+    else
+    {
+      Fluttertoast.showToast(
+        msg: body['message'].toString(),
+        backgroundColor: Colors.grey,
+      );
+
+    }
+  }
 
 
   @override
@@ -65,6 +102,8 @@ class _ForgetPasswordState extends State<ForgetPassword> {
             SizedBox(height: 42,),
 
             ElevatedButton(onPressed: (){
+
+              forgotpass();
               openAlert();
             },
                 style: ElevatedButton.styleFrom(primary: Colors.blue,fixedSize: Size(300, 54),shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(23.0)),),
@@ -98,7 +137,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
         context: context,
         builder: (context)=> AlertDialog(
           title: Image.asset('image/check.png',width: 150,height: 100,),
-          content: Text('Please check your email for create a new password',textAlign: TextAlign.center,style: TextStyle(fontSize: 17),),
+          content: Text('Please check your email for new password',textAlign: TextAlign.center,style: TextStyle(fontSize: 17),),
           actions: [
             TextButton(
                 onPressed: (){
